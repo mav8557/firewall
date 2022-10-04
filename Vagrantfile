@@ -65,7 +65,7 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt update -y
-    apt install docker.io gcc-multilib clang bpftrace -y
+    apt install clang llvm libbpf-def libelf-dev libpcap-dev gcc-multilib build-essential make linux-tools-common python3-pip docker.io gcc-multilib clang bpftrace -y
     systemctl enable --now docker.service
   SHELL
 end
